@@ -54,3 +54,24 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# additional gems added
+
+gem 'rubocop', '~> 1.17'
+gem 'devise', '~> 4.8'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
+gem 'mini_magick', '~> 4.11'
+gem 'omniauth-facebook', '~> 8.0'
+
+# Allows access to twitter's Bootstrap framework
+gem 'bootstrap'
+# Hirb gem organizes the display for active record information into tables when using the rails console… eg. After opening rails console type Hirb.enable to activate it
+gem 'hirb'
+# All gems below are related to the RSpec Gem except the dotenv-rails gem
+group :development, :test do
+  # RSpec Testing
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  # A Ruby gem to load environment variables from `.env` files.
+  gem 'dotenv-rails'
+end
