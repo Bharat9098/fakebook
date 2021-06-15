@@ -75,3 +75,4 @@ group :development, :test do
   # A Ruby gem to load environment variables from `.env` files.
   gem 'dotenv-rails'
 end
+gem 'devise-bootstrap-views', '~> 1.0'
