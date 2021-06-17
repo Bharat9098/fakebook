@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
+  root 'user#index'
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users, only: %i[index show] do
+    resources :friendships, only: %i[create]
+  end
+
+  resources :posts, only: %i[index new create destroy] do
+    resources :likes, only: %i[create]  
+  end
+
+  resources :comments, only: %i[new create destroy] do
+    resources :likes, only: %i[create]
+  end
 end
